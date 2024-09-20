@@ -1,24 +1,30 @@
 
+### 2.MAPPING ###
 
-A=ERR2021902
-B=ERR2021903
-C=ERR2021904
+# set library IDs in A, B,...
+# e.g., DRR547528, DRR547529
+A=
+B=
 
-INDIV=Kibale_LR10
+# set INDIV name
+# e.g., Bossou_FF45
+INDIV=
 
+# set the number of threads
+THREADS=
 
-### BWA ###
+# Start mapping
 
-for i in ${A} ${B} ${C}
+for i in ${A} ${B}
 
 do
 
-# bwa mem
+### -R in bwa mem should be edited directly. ###
 
 bwa mem \
--t 16 \
--R '@RG\tID:exome_Kibale_LR10\tSM:Kibale_LR10\tPL:ILLUMINA\tLB:Kibale_LR10' \
-../Pan_tro_3.0.105/Pan_troglodytes.Pan_tro_3.0.dna.toplevel.fa \
+-t ${THREADS} \
+-R '@RG\tID:exome_Bossou_FF45\tSM:Bossou_FF45\tPL:ILLUMINA\tLB:Bossou_FF45' \
+Pan_troglodytes.Pan_tro_3.0.dna.toplevel.fa \
 ${INDIV}_${i}_fw_paired_trimmed.fastq \
 ${INDIV}_${i}_re_paired_trimmed.fastq \
 > ${INDIV}_${i}_mem_paired.sam
@@ -26,47 +32,28 @@ ${INDIV}_${i}_re_paired_trimmed.fastq \
 rm ${INDIV}_${i}_fw_paired_trimmed.fastq
 rm ${INDIV}_${i}_re_paired_trimmed.fastq
 
-# sam to bam
-
-samtools view -@ 16 -bS ${INDIV}_${i}_mem_paired.sam > ${INDIV}_${i}_mem_paired.bam
+samtools view -@ ${THREADS} -bS ${INDIV}_${i}_mem_paired.sam > ${INDIV}_${i}_mem_paired.bam
 rm ${INDIV}_${i}_mem_paired.sam
 
-# sort
-
-samtools sort -@ 16 ${INDIV}_${i}_mem_paired.bam -T temp -o ${INDIV}_${i}_mem_paired_sorted.bam
+samtools sort -@ ${THREADS} ${INDIV}_${i}_mem_paired.bam -T temp_${INDIV} -o ${INDIV}_${i}_mem_paired_sorted.bam
 rm ${INDIV}_${i}_mem_paired.bam
 
-# index bam files
-
-samtools index -@ 16 ${INDIV}_${i}_mem_paired_sorted.bam
-
-# statistics
-
-samtools idxstats -@ 16 ${INDIV}_${i}_mem_paired_sorted.bam > ${INDIV}_${i}_mem_paired_sorted.out
+samtools index -@ ${THREADS} ${INDIV}_${i}_mem_paired_sorted.bam
+samtools idxstats -@ ${THREADS} ${INDIV}_${i}_mem_paired_sorted.bam > ${INDIV}_${i}_mem_paired_sorted.out
 
 done
 
-
-### MERGE ###
-
-# merge bam
+### Please add ${C}, #{D},... if the number of libraries is more than two. ###
 
 samtools merge \
--@ 16 \
+-@ ${THREADS} \
 ${INDIV}_mem_paired_merged.bam \
 ${INDIV}_${A}_mem_paired_sorted.bam \
-${INDIV}_${B}_mem_paired_sorted.bam \
-${INDIV}_${C}_mem_paired_sorted.bam
+${INDIV}_${B}_mem_paired_sorted.bam
 
-# sort bam
+samtools sort -@ ${THREADS} ${INDIV}_mem_paired_merged.bam -T temp_${INDIV} -o ${INDIV}_mem_paired_merged_sorted.bam
 
-samtools sort -@ 16 ${INDIV}_mem_paired_merged.bam -T temp -o ${INDIV}_mem_paired_merged_sorted.bam
 rm ${INDIV}_mem_paired_merged.bam
 
-# index bam
-
-samtools index -@ 16 ${INDIV}_mem_paired_merged_sorted.bam
-
-# Statistics
-
-samtools idxstats -@ 16 ${INDIV}_mem_paired_merged_sorted.bam > ${INDIV}_mem_paired_merged_sorted.out
+samtools index -@ ${THREADS} ${INDIV}_mem_paired_merged_sorted.bam
+samtools idxstats -@ ${THREADS} ${INDIV}_mem_paired_merged_sorted.bam > ${INDIV}_mem_paired_merged_sorted.out
