@@ -2,18 +2,18 @@
 ### 1.TRIM ###
 
 # set library IDs in A, B, C, D,...
-# e.g., DRR547528, DRR547529
+# e.g., A=DRR547528, B=DRR547529
 
 A=
 B=
 
 # set INDIV name
-# e.g., Bossou_FF45
+# e.g., INDIV=Bossou_FF45
 
 INDIV=
 
 # set sequencing length
-# e.g., 150
+# e.g., LENGTH=150
 
 LENGTH=
 
