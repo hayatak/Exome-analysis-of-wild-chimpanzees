@@ -1,7 +1,7 @@
 
 ### 1.TRIM ###
 
-# set accession IDs in A, B,...
+# set library IDs in A, B,...
 # e.g., DRR547528, DRR547529
 
 A=
