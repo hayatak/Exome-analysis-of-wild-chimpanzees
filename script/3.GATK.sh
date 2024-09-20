@@ -1,4 +1,3 @@
-
 ### 3.GATK ###
 
 # Set INDIV name
