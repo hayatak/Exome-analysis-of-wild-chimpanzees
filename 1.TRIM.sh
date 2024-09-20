@@ -1,7 +1,7 @@
 
 ### 1.TRIM ###
 
-# set library IDs in A, B,...
+# set library IDs in A, B, C, D,...
 # e.g., DRR547528, DRR547529
 
 A=
