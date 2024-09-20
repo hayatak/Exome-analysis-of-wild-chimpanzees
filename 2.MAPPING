@@ -1,18 +1,18 @@
 
 ### 2.MAPPING ###
 
-# set library IDs in A, B,...
+# Set library IDs in A, B,...
 # e.g., A=DRR547528, B=DRR547529
 
 A=
 B=
 
-# set INDIV name
+# Set INDIV name
 # e.g., INDIV=Bossou_FF45
 
 INDIV=
 
-# set the number of threads
+# Set the number of threads
 
 THREADS=
 
@@ -22,7 +22,7 @@ for i in ${A} ${B}
 
 do
 
-### -R in bwa mem should be edited directly (e.g., Bossou_FF45). ###
+### -R in bwa mem should be edited directly (e.g., Bossou_FF45) ###
 
 bwa mem \
 -t ${THREADS} \
@@ -46,7 +46,7 @@ samtools idxstats -@ ${THREADS} ${INDIV}_${i}_mem_paired_sorted.bam > ${INDIV}_$
 
 done
 
-### Please add ${C}, ${D},... if the number of libraries is more than two. ###
+### Please add ${C}, ${D},... if the number of libraries is more than two ###
 
 samtools merge \
 -@ ${THREADS} \
