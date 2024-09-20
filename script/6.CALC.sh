@@ -1,4 +1,9 @@
+### 6.CALC ###
 
+# Set INDIV name
+# e.g., INDIV=Bossou_FF45
+
+# Start CALC
 
 # exclude indels
 
