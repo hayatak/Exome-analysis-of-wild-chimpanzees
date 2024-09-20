@@ -2,13 +2,13 @@
 ### 2.MAPPING ###
 
 # set library IDs in A, B,...
-# e.g., DRR547528, DRR547529
+# e.g., A=DRR547528, B=DRR547529
 
 A=
 B=
 
 # set INDIV name
-# e.g., Bossou_FF45
+# e.g., INDIV=Bossou_FF45
 
 INDIV=
 
