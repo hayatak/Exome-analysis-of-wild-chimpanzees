@@ -1,23 +1,23 @@
 
 ### 1.TRIM ###
 
-# set library IDs in A, B, C, D,...
+# Set library IDs in A, B, C, D,...
 # e.g., A=DRR547528, B=DRR547529
 
 A=
 B=
 
-# set INDIV name
+# Set INDIV name
 # e.g., INDIV=Bossou_FF45
 
 INDIV=
 
-# set sequencing length
+# Set sequencing length
 # e.g., LENGTH=150 when 151 cycles
 
 LENGTH=
 
-# set the number of threads
+# Set the number of threads
 
 THREADS=
 
