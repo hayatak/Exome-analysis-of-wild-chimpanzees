@@ -1,4 +1,9 @@
+### 4.BAMQC ###
 
+# Set INDIV name
+# e.g., INDIV=Bossou_FF45
+
+# Start BAMQC
 
 qualimap bamqc \
 -bam ${INDIV}_mem_paired_merged_sorted_markdup_BQSR.bam \
