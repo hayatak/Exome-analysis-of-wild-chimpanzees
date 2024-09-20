@@ -1,3 +1,5 @@
+### 7.VCFMERGE ###
+
 # Start VCFMERGE
 
 for CHR in chrA chrX chrY
