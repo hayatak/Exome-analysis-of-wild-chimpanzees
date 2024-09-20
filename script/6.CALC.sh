@@ -125,3 +125,16 @@ echo 'No. of pseudogenes (all)'
 wc -l ${INDIV}_snpEff.vcf.body.frameshift_variant
 wc -l ${INDIV}_snpEff.vcf.body.start_lost
 wc -l ${INDIV}_snpEff.vcf.body.stop_gained
+
+
+# bgzip & tabix
+
+bgzip ${INDIV}_snpEff_SNPs.chrA.vcf
+bgzip ${INDIV}_snpEff_SNPs.chrX.vcf
+bgzip ${INDIV}_snpEff_SNPs.chrY.vcf
+bgzip ${INDIV}_snpEff_SNPs.MT.vcf
+
+tabix ${INDIV}_snpEff_SNPs.chrA.vcf.gz
+tabix ${INDIV}_snpEff_SNPs.chrX.vcf.gz
+tabix ${INDIV}_snpEff_SNPs.chrY.vcf.gz
+tabix ${INDIV}_snpEff_SNPs.MT.vcf.gz
