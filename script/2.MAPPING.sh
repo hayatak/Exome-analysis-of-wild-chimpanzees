@@ -29,7 +29,7 @@ bwa mem \
 Pan_troglodytes.Pan_tro_3.0.dna.toplevel.fa \
 ${INDIV}_${i}_fw_paired_trimmed.fastq \
 ${INDIV}_${i}_re_paired_trimmed.fastq \
-> ${INDIV}_${i}_mem_paired.sam
+ > ${INDIV}_${i}_mem_paired.sam
 
 rm ${INDIV}_${i}_fw_paired_trimmed.fastq
 rm ${INDIV}_${i}_re_paired_trimmed.fastq
