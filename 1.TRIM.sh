@@ -1,23 +1,25 @@
 
-### 1.1 TRIM ###
+### 1.TRIM ###
 
-# set IDs in A, B, C,...
+# set accession IDs in A, B,...
+# e.g., DRR547528, DRR547529
 
 A=
 B=
-C=
 
 # set INDIV name
+# e.g., Bossou_FF45
 
 INDIV=
 
-# Start trim
-
-for i in ${A} ${B} ${C}
-
 # set sequencing length
+# e.g., 150
 
 LENGTH=
+
+# Start trim
+
+for i in ${A} ${B}
 
 do
 
