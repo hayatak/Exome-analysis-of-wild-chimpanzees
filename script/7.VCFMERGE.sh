@@ -2,7 +2,7 @@
 
 # Start VCFMERGE
 
-for CHR in chrA chrX chrY
+for CHR in chrA chrX chrY MT
 
 do
 
