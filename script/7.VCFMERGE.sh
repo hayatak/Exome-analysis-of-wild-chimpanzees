@@ -58,8 +58,8 @@ Loango_LR6/Loango_LR6_snpEff_SNPs.${CHR}.vcf.gz \
 Loango_LR7/Loango_LR7_snpEff_SNPs.${CHR}.vcf.gz \
 Loango_LR8/Loango_LR8_snpEff_SNPs.${CHR}.vcf.gz \
 Loango_LR9/Loango_LR9_snpEff_SNPs.${CHR}.vcf.gz \
- > Chimpanzee_exomes_all/Chimpanzee_exomes_all_${CHR}.vcf.gz
+ > Chimpanzee_exome_all/Chimpanzee_exome_all_${CHR}.vcf.gz
 
-tabix Chimpanzee_exomes_all/Chimpanzee_exomes_all_${CHR}.vcf.gz
+tabix Chimpanzee_exome_all/Chimpanzee_exome_all_${CHR}.vcf.gz
 
 done
