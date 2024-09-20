@@ -1,1 +1,1 @@
-# Exome-analysis-of-wild-chimpanzees
+# Exome analysis of wild chimpanzees
