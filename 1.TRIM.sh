@@ -13,7 +13,7 @@ B=
 INDIV=
 
 # set sequencing length
-# e.g., LENGTH=150
+# e.g., LENGTH=150 when 151 cycles
 
 LENGTH=
 
