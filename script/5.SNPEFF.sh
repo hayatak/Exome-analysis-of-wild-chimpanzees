@@ -1,4 +1,4 @@
-### 1.SNPEFF ###
+### 5.SNPEFF ###
 
 # Set INDIV name
 # e.g., INDIV=Bossou_FF45
