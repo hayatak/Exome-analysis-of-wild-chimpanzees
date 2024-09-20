@@ -19,10 +19,10 @@ grep -v '^#' ${INDIV}_snpEff_SNPs.recode.vcf > ${INDIV}_snpEff_SNPs.recode.vcf.b
 grep -v '\./\.:\|\.|\.:' ${INDIV}_snpEff_SNPs.recode.vcf.body > ${INDIV}_snpEff_SNPs.recode.vcf.body.assigned
 grep '\./\.:\|\.|\.:' ${INDIV}_snpEff_SNPs.recode.vcf.body > ${INDIV}_snpEff_SNPs.recode.vcf.body.unassigned
 
-echo 'CHECK (unassigned remain)'
+echo 'CHECK'
 grep '\./\.\|\.|\.' ${INDIV}_snpEff_SNPs.recode.vcf.body.assigned
 
-echo 'CHECK (non-colon exist)'
+echo 'CHECK'
 grep -v '0/0:\|0|0:\|0/1:\|0|1:\|1/1:\|1|1:\|1/2:\|1|2:' ${INDIV}_snpEff_SNPs.recode.vcf.body.assigned
 
 echo 'No of sites (all)'
